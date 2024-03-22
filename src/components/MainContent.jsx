@@ -120,11 +120,11 @@ export default  function MainContent() {
       {/* preyers card */}
       <Stack direction="row" justifyContent={'space-between'}
             style={{marginTop:"50px"}}>
-        <Prayer prayer={"الفجر"} time={timings.Fajr} img={cardImgURL[0]} />
-        <Prayer prayer={"الظهر"} time={timings.Dhuhr} img={cardImgURL[1]} />
-        <Prayer prayer={"العصر"} time={timings.Asr} img={cardImgURL[2]} />
-        <Prayer prayer={"المغرب"} time={timings.Sunset} img={cardImgURL[3]} />
-        <Prayer prayer={"العشاء"} time={timings.Isha} img={cardImgURL[4]} />
+        <Prayer prayer={"الفجر"} time={timings.Fajr} img={"../../public/images/fajr-prayer.png"} />
+        <Prayer prayer={"الظهر"} time={timings.Dhuhr} img={"../../public/images/dhhr-prayer-mosque.png"} />
+        <Prayer prayer={"العصر"} time={timings.Asr} img={"../../public/images/asr-prayer-mosque.png"} />
+        <Prayer prayer={"المغرب"} time={timings.Sunset} img={"../../public/images/sunset-prayer-mosque.png"} />
+        <Prayer prayer={"العشاء"} time={timings.Isha} img={"../../public/images/night-prayer-mosque.png"} />
       </Stack>
 
       {/* Select City */}
@@ -176,13 +176,6 @@ export default  function MainContent() {
   )
 }
 
-let cardImgURL = [
-  "public/images/fajr-prayer.png",
-  "public/images/dhhr-prayer-mosque.png",
-  "public/images/asr-prayer-mosque.png",
-  "public/images/sunset-prayer-mosque.png",
-  "public/images/night-prayer-mosque.png",
-];
 let prayerName = {
   "Fajr": "الفجر",
   "Dhuhr": "الظهر",
