@@ -93,7 +93,7 @@ export default  function MainContent() {
     return () => {
       clearInterval(intervalID);
     };
-  },[timings, prayer])
+  }, [timings, prayer]);
   return (
     <>
       
@@ -183,6 +183,7 @@ let prayerName = {
   "Sunset": "المغرب",
   "Isha":"العشاء"
 }
+
 let EngToArbCountery = [
   {
     id: "1",
@@ -195,6 +196,7 @@ let EngToArbCountery = [
     valueArabic:"المملكة العربية السعودية"
   }
 ]
+
 let cityTranslate = {
   "domiat": "دمياط",
   "cairo": "القاهرة",
@@ -206,6 +208,7 @@ let cityTranslate = {
   "AL Madinah AL Munawwarah":"المدينة المنورة"
   
 }
+
 let cityEngToArb = {
   "EG": [
     {

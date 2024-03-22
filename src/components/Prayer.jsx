@@ -7,11 +7,12 @@ import Typography from '@mui/material/Typography';
 export default function Prayre(props) {
   return (
     <Card sx={{ maxWidth: 346 }} style={{width:200}}>
-      <CardMedia
+      {/* <CardMedia
         sx={{ height: 140 }}
         image={props.img}
         title="green iguana"
-      />
+      /> */}
+      <img height={150} width={"100%"} src={props.img}/>
       <CardContent>
         <h2 >
           {props.prayer}
@@ -22,6 +23,7 @@ export default function Prayre(props) {
         </Typography>
         {/* </h4> */}
       </CardContent>
+      
     </Card>
   );
 }
