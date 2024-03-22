@@ -177,11 +177,11 @@ export default  function MainContent() {
 }
 
 let cardImgURL = [
-  "../../public/images/fajr-prayer.png",
-  "../../public/images/dhhr-prayer-mosque.png",
-  "../../public/images/asr-prayer-mosque.png",
-  "../../public/images/sunset-prayer-mosque.png",
-  "../../public/images/night-prayer-mosque.png",
+  "public/images/fajr-prayer.png",
+  "public/images/dhhr-prayer-mosque.png",
+  "public/images/asr-prayer-mosque.png",
+  "public/images/sunset-prayer-mosque.png",
+  "public/images/night-prayer-mosque.png",
 ];
 let prayerName = {
   "Fajr": "الفجر",
