@@ -65,7 +65,7 @@ export default  function MainContent() {
     else  {
       setPrayer("Fajr");
     }
-
+    setToday(momentNow.format("MMM Do YYYY | h:mm:ss"));
     // slelect the next paryer subtract time
     const remainingTime = moment(timings[prayer], "hh:mm").diff(momentNow);
     
@@ -86,7 +86,6 @@ export default  function MainContent() {
   useEffect(() => {
     const todayMoment = moment();
     setToday(todayMoment.format("MMM Do YYYY | h:mm"));
-
     let intervalID = setInterval(() => {
       downTimer();
     }, 1000);
@@ -142,13 +141,11 @@ export default  function MainContent() {
             label={"المدينة"}
             onChange={handleCityLocation}
           >
-            <div style={{ backgroundColor: "#F7F4EF" }}>
-              {
-                cityEngToArb[countery].map((ele) => {
-                  return <MenuItem key={ele.id} value={ele.valueEnglish}>{ele.valueArabic}</MenuItem>
-                })
-              } 
-            </div>
+          {
+            cityEngToArb[countery].map((ele) => {
+              return <MenuItem style={{ backgroundColor: "#F7F4EF" }} key={ele.id} value={ele.valueEnglish}>{ele.valueArabic}</MenuItem>
+            })
+          } 
           </Select>
         </FormControl>
 
@@ -167,13 +164,11 @@ export default  function MainContent() {
             onChange={handleCounteryLocation}
           >
 
-            <div style={{backgroundColor:"#F7F4EF"}}>
-              {
-                EngToArbCountery.map((ele) => {
-                  return <MenuItem key={ele.id} value={ele.valueEnglish}>{ele.valueArabic}</MenuItem>
-                })
-              }
-            </div>
+          {
+            EngToArbCountery.map((ele) => {
+              return <MenuItem style={{ backgroundColor: "#F7F4EF" }} key={ele.id} value={ele.valueEnglish}>{ele.valueArabic}</MenuItem>
+            })
+          }
           </Select>
         </FormControl>
       </Stack>

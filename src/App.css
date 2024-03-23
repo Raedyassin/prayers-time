@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
-html{
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap");
+html {
   font-family: "IBM Plex Sans Arabic", sans-serif !important;
   direction: rtl;
 }
@@ -10,10 +10,10 @@ html{
   padding: 2rem;
   text-align: center;
 } */
-.MuiOutlinedInput-notchedOutline{
+.MuiOutlinedInput-notchedOutline {
   border-color: black !important;
 }
-.MuiSvgIcon-root{
+.MuiSvgIcon-root {
   color: black !important;
 }
 .logo {
