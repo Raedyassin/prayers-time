@@ -118,7 +118,7 @@ export default  function MainContent() {
       <Divider style={{borderColor:"black",opacity:"0.4"}}/>
 
       {/* preyers card */}
-      <Stack direction="row"justifyContent={widthScreen <= 768 ?'space-around':'space-between'} 
+      <Stack direction="row"justifyContent={widthScreen <= 1200 ?'space-around':'space-between'} 
             style={{marginTop:" "}} flexWrap={"wrap"} >
         <Prayer prayer="الفجر" time={timings.Fajr} img={"https://res.cloudinary.com/dzbcwbeit/image/upload/v1711191282/fajr-prayer_z2prpy.png"} />
         <Prayer prayer="الظهر" time={timings.Dhuhr} img={"https://res.cloudinary.com/dzbcwbeit/image/upload/v1711191246/asr-prayer-mosque_ez9t0q.png"} />
