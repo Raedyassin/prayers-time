@@ -3,6 +3,7 @@ html{
   font-family: "IBM Plex Sans Arabic", sans-serif !important;
   direction: rtl;
 }
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -10,10 +11,10 @@ html{
   text-align: center;
 } */
 .MuiOutlinedInput-notchedOutline{
-  border-color: white !important;
+  border-color: black !important;
 }
 .MuiSvgIcon-root{
-  color: white !important;
+  color: black !important;
 }
 .logo {
   height: 6em;

@@ -94,69 +94,72 @@ export default  function MainContent() {
       clearInterval(intervalID);
     };
   }, [timings, prayer]);
+  let widthScreen = window.innerWidth;
   return (
     <>
       
       {/* firest row location infor */}
-      <Grid container >
-        <Grid xs={6}>
-          <div>
-            <h2>{today}</h2>
-            <h1>{cityTranslate[city]}</h1>
+      <Grid container style={{color:"black",textAlign:"center"}} >
+        <Grid xs={widthScreen <= 768 ? 12 : 6}>
+          <div >
+            <h2 style={{ width: widthScreen <= 768 ? "100%" : "40vw", textAlign: widthScreen <= 768 ? "center" : ""  }} >{`${today}`}</h2>
+            <h1 style={{ width: widthScreen <= 768 ? "100%" : "40vw", textAlign: widthScreen <= 768 ? "center" : "", marginTop:"0" }}>{cityTranslate[city]}</h1>
           </div>
         </Grid>
 
-        <Grid xs={6}>
+        <Grid xs={widthScreen <= 768 ? 12 : 6} style={{color:"black",textAlign:"center"}}> 
           <div>
-            <h2>متبقي حتي صلاة { prayerName[prayer]}</h2>
-            <h1>{remainingTimeForNextPrayer}</h1>
+            <h2 style={{width: widthScreen <= 768 ? "100%" : "40vw", textAlign: widthScreen <= 768 ? "center" : ""}}>متبقي حتي صلاة { prayerName[prayer]}</h2>
+            <h1 style={{width: widthScreen <= 768 ? "100%" : "40vw", textAlign: widthScreen <= 768 ? "center" : "", marginTop:"0"}}>{remainingTimeForNextPrayer}</h1>
           </div>
         </Grid>
       </Grid>
       {/* firest row location infor */}
 
-      <Divider style={{borderColor:"white",opacity:"0.4"}}/>
+      <Divider style={{borderColor:"black",opacity:"0.4"}}/>
 
       {/* preyers card */}
-      <Stack direction="row" justifyContent={'space-between'}
-            style={{marginTop:"50px"}}>
-        <Prayer prayer={"الفجر"} time={timings.Fajr} img={"public/fajr-prayer.png"} />
-        <Prayer prayer={"الظهر"} time={timings.Dhuhr} img={"public/dhhr-prayer-mosque.png"} />
-        <Prayer prayer={"العصر"} time={timings.Asr} img={"public/asr-prayer-mosque.png"} />
-        <Prayer prayer={"المغرب"} time={timings.Sunset} img={"public/sunset-prayer-mosque.png"} />
-        <Prayer prayer={"العشاء"} time={timings.Isha} img={"public/night-prayer-mosque.png"} />
+      <Stack direction="row"justifyContent={widthScreen <= 768 ?'space-around':'space-between'} 
+            style={{marginTop:" "}} flexWrap={"wrap"} >
+        <Prayer prayer="الفجر" time={timings.Fajr} img={"https://res.cloudinary.com/dzbcwbeit/image/upload/v1711191282/fajr-prayer_z2prpy.png"} />
+        <Prayer prayer="الظهر" time={timings.Dhuhr} img={"https://res.cloudinary.com/dzbcwbeit/image/upload/v1711191246/asr-prayer-mosque_ez9t0q.png"} />
+        <Prayer prayer="العصر" time={timings.Asr} img={"https://res.cloudinary.com/dzbcwbeit/image/upload/v1711191282/dhhr-prayer-mosque_oifgdy.png"} />
+        <Prayer prayer="المغرب" time={timings.Sunset} img={"https://res.cloudinary.com/dzbcwbeit/image/upload/v1711191283/sunset-prayer-mosque_iy9e05.png"} />
+        <Prayer prayer="العشاء" time={timings.Isha} img={"https://res.cloudinary.com/dzbcwbeit/image/upload/v1711191602/night-prayer-mosque_chj31f.png"} />
       </Stack>
 
       {/* Select City */}
-      <Stack direction={"row"} justifyContent={"space-around"} style={{marginTop:"50px"}} >
+      <Stack  direction={"row"} justifyContent={"space-around"} style={{marginTop:"40px",marginBottom:"40px"}} >
         <FormControl style={{width:"30%"}}>
           <InputLabel id="demo-simple-select-label">
-            <span style={{color:"white"}}>{"المدينة"}</span>
+            <span style={{color:"black"}}>المدينة</span>
           </InputLabel>
           <Select
-            style={{color:"white"}}
+            style={{color:"black" ,backgroundColor:"#F7F4EF"}}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             // value={age}
             label={"المدينة"}
             onChange={handleCityLocation}
           >
-            {
-              cityEngToArb[countery].map((ele) => {
-                return <MenuItem key={ele.id} value={ele.valueEnglish}>{ele.valueArabic}</MenuItem>
-              })
-            }
+            <div style={{ backgroundColor: "#F7F4EF" }}>
+              {
+                cityEngToArb[countery].map((ele) => {
+                  return <MenuItem key={ele.id} value={ele.valueEnglish}>{ele.valueArabic}</MenuItem>
+                })
+              } 
+            </div>
           </Select>
         </FormControl>
 
 
         {/* select countery */}
-        <FormControl style={{width:"30%"}}>
+        <FormControl style={{width:"30%"  }}>
           <InputLabel id="demo-simple-select-label">
-            <span style={{color:"white"}}>{"البلد"}</span>
+            <span style={{color:"black" }}>البلد</span>
           </InputLabel>
           <Select
-            style={{color:"white"}}
+            style={{color:"black",backgroundColor:"#F7F4EF"}}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             // value={age}
@@ -164,11 +167,13 @@ export default  function MainContent() {
             onChange={handleCounteryLocation}
           >
 
-            {
-              EngToArbCountery.map((ele) => {
-                return <MenuItem key={ele.id} value={ele.valueEnglish}>{ele.valueArabic}</MenuItem>
-              })
-            }
+            <div style={{backgroundColor:"#F7F4EF"}}>
+              {
+                EngToArbCountery.map((ele) => {
+                  return <MenuItem key={ele.id} value={ele.valueEnglish}>{ele.valueArabic}</MenuItem>
+                })
+              }
+            </div>
           </Select>
         </FormControl>
       </Stack>
@@ -202,6 +207,7 @@ let cityTranslate = {
   "cairo": "القاهرة",
   "Beheira": "البحيرة",
   "Mansoura": "المنصورة",
+  "Asyut":"أسيوط",
   "Dammam": "الدمام",
   "Riyadh": "الرياض",
   "Makkah al Mukarramah": "مكة المكرمة",
@@ -230,6 +236,11 @@ let cityEngToArb = {
       id: "4",
       valueEnglish: "Mansoura",
       valueArabic: "المنصورة",
+    },
+    {
+      id: "5",
+      valueEnglish: "Asyut",
+      valueArabic: "أسيوط",
     }
   ],
   "SA": [
